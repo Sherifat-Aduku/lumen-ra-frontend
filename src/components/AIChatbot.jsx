@@ -1,6 +1,6 @@
 import React from 'react'
 
-const AIChatabot = () => {
+const AIChatbot = () => {
   return (
     <div>
       <h1>Chat with me</h1>
@@ -8,4 +8,4 @@ const AIChatabot = () => {
   )
 }
 
-export default AIChatabot
+export default AIChatbot
