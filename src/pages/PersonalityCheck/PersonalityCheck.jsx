@@ -50,7 +50,7 @@ function reducer(state, action) {
   const PersonalityCheck = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
   const [showWelcome, setShowWelcome] = useState(false); 
-  const { token, user, personalityCheck } = useContext(AuthContext); 
+  const { token, user } = useContext(AuthContext); 
   const navigate = useNavigate();
 
 
