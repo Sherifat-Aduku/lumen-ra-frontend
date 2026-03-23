@@ -51,11 +51,9 @@ const handleStartLearning = () => {
             </p>
 
 
-          <Link to="/Modules">
-            <Button label="Start Learning" variant="primary"/>
-          </Link>
-
+            <Link to="/Modules">
             <Button label = "Start Learning" variant="primary" onClick={handleStartLearning}/>
+             </Link>
 
           </div>
 

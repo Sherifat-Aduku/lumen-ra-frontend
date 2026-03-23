@@ -112,6 +112,7 @@ const ModulesPage = () => {
         <div className="action-btns">
           <button className="btn-orange">Get Started</button>
           <button className="btn-white-outline">Take Confidence Check</button>
+          
         </div>
       </section>
 
