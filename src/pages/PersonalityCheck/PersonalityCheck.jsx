@@ -101,7 +101,7 @@ function reducer(state, action) {
   } else { 
     console.error("Submission error:", result.error);
     dispatch({ type: "SUBMIT_ERROR" });
-    alert(result.error || "Failed to save profile.");
+    alert(result.error || "Failed to save profile. Please login!");
   }
 } catch (err) {
   console.error("Server error:", err);
