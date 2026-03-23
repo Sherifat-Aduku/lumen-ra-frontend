@@ -1,5 +1,5 @@
 import { useState, useContext } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthContext';
 import routes from '../../utils/routes';
 import './LoginForm.css';
@@ -11,15 +11,18 @@ const LoginForm = () => {
   
   const { login, loading } = useContext(AuthContext);
   const navigate = useNavigate();
+   const location = useLocation();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     
     const result = await login(email, password);
     
-    if (result && result.ok) {
-      // Use the exact route string or the routes utility
-      navigate(routes.Dashboard || '/Dashboard'); 
+     if (result && result.ok) {
+    // Redirect back to the page user tried to access or dashboard by default
+    const from = location.state?.from || routes.Dashboard || '/dashboard';
+    navigate(from, { replace: true });
+    
     } else {
       alert(result?.error || "Login failed. Please check your credentials.");
     }

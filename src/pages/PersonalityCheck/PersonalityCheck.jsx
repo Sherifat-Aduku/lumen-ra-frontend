@@ -54,6 +54,13 @@ const PersonalityCheck = () => {
   ];
 
   const handleAction = async () => {
+
+  if (!token) {
+  alert("Please login first to continue.");
+  navigate("/login", { state: { from: "/personality-check" } });
+  return;
+  }
+  
     if (state.currentStep < totalSteps) {
       dispatch({ type: 'NEXT_STEP' });
     } else {
